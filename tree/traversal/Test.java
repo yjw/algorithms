@@ -18,8 +18,7 @@ public class Test {
         t4.left = t3;
         t4.right = t5;
         // t6 is the root;
-        Solution s = new Solution();
-        System.out.println(s.inorder(t6));
-        System.out.println(s.postorder(t6));
+        Vertical s = new Vertical();
+        System.out.println(s.traverse(t6));
     }
 }
