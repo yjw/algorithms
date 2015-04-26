@@ -1,21 +1,17 @@
 public class Solution {
-    public int[] wiggle (int[] s) {
-        if (s == null || s.length < 3) {
-            return s;
+    public void reorder(int[] arr) {
+        assert (arr != null);
+        if (arr.length == 0) {
+            return;
         }
-        boolean flag = true;
-        int current = s[0];
-        for (int i = 0; i < s.length - 1; i++) {
-            if ((flag && current > s[i + 1]) && (!flag && current < s[i + 1])) {
-                s[i] = s[i + 1];
+        boolean smallHead = true;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (smallHead && arr[i] > arr[i + 1] || !smallHead && arr[i] < arr[i + 1]) {
+                int tmp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = tmp;
             }
-            else {
-                s[i] = current;
-                current = s[i + 1];
-            }
-            flag = !flag;
+            smallHead = !smallHead;
         }
-        s[s.length - 1] = current;
-        return s;
     }
 }
