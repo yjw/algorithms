@@ -6,6 +6,7 @@ public class SegmentST {
     public Node build (int l, int r) {
         Node root = new Node(l , r);
         if (l + 1 < r) {
+            // To avoid overflow
             int mid = l + (r - l) / 2;
             root.left = build(l, mid);
             root.right = build(mid, r);
