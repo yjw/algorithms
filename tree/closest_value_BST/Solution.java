@@ -3,12 +3,22 @@ public class Solution {
         if (root == null) {
             return root;
         }
-        if (target.val < root.val) {
+        if (root.val == target) {
+            return root;
+        }
+        if (target < root.val) {
             if (root.left == null) {
                 return root;
             }
             TreeNode p = closest(root.left, target);
-            if ()
+            return Math.abs(p.val - target) > Math.abs(root.val - target) ? root : p;
+        }
+        else {
+            if (root.right == null) {
+                return root;
+            }
+            TreeNode p = closest(root.right, target);
+            return Math.abs(p.val - target) > Math.abs(root.val - target) ? root : p;
         }
     }
 }
