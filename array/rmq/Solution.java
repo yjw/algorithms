@@ -17,7 +17,7 @@ public class Solution {
 	// This is Sqrt method
 	public int rmq_sqrt (int[] array, int m, int n) {
 		int len = array.length;
-		int sq = (int)Math.sqrt((double)len);
+		int sq = (int) Math.sqrt((double)len);
 		int num = len / sq + len % sq;
 		int[] dp = new int[num];
 		for (int i = 0; i < len / sq; i++) {

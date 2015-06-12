@@ -19,20 +19,24 @@ public class Solution {
                 matchedOnRight.append(leftChar);
                 ++left;
                 --right;
-                previousCharWasMismatch = false;
+                c = false;
             }
             else {
                 appendOnRight.append(matchedOnRight);
                 matchedOnRight.setLength(0);
                 right = n - 1;
+                /*
                 if (previousCharWasMismatch) {
                     appendOnRight.append(leftChar);
                     ++left;
                 }
                 previousCharWasMismatch = true;
+                */
             }
         }
+        
         String shortestPalindrome = word + appendOnRight.reverse();
         return shortestPalindrome;
+        
     }
 }

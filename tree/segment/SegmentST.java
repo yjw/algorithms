@@ -5,7 +5,7 @@ public class SegmentST {
     
     public Node build (int l, int r) {
         Node root = new Node(l , r);
-        if (l + 1 < r) {
+        if (l < r) {
             int mid = l + (r - l) / 2;
             root.left = build(l, mid);
             root.right = build(mid, r);
@@ -14,28 +14,28 @@ public class SegmentST {
     }
     
     public void insert (int c, int d, Node root) {
-        if (c <= root.left && d >= root.right) {
+        if (c <= root.lo && d >= root.hi) {
             root.cover++;
         }
         else {
-            if (c < (root.left + root.right) / 2) {
+            if (c < (root.lo + root.hi) / 2) {
                 insert(c, d, root.left);
             }
-            if (d > (root.left + root.right) / 2) {
+            if (d > (root.lo + root.hi) / 2) {
                 insert(c, d, root.right);
             }
         }
     }
     
     public void delete (int c, int d, Node root) {
-        if (c <= root.left && d >= root.right) {
+        if (c <= root.lo && d >= root.hi) {
             root.cover--;
         }
         else {
-            if (c < (root.left + root.right) / 2) {
+            if (c < (root.lo + root.hi) / 2) {
                 delete(c, d, root.left);
             }
-            if (d > (root.left + root.right) / 2) {
+            if (d > (root.lo + root.hi) / 2) {
                 delete(c, d, root.right);
             }
         }

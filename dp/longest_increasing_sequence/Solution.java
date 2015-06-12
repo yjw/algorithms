@@ -29,12 +29,15 @@ public class Solution {
 	        node.value = x;
             int i = Collections.binarySearch(pileTops, node);
             if (i < 0) i = ~i;
-	        if (i != 0)
+	        if (i != 0) {
 		        node.pointer = pileTops.get(i-1);
-            if (i != pileTops.size())
+            }
+            if (i != pileTops.size()) {
                 pileTops.set(i, node);
-            else
+            }
+            else {
                 pileTops.add(node);
+            }
         }
         
         List<Integer> result = new ArrayList<Integer>();
