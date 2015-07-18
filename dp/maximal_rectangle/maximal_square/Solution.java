@@ -1,3 +1,5 @@
+//This requires O(n) space and O(mn^2) time.
+
 public class Solution {
 	public int maximalSquare (char[][] matrix) {
 		if (matrix.length < 1 || matrix[0].length < 1) {
@@ -20,13 +22,12 @@ public class Solution {
 				}
 				else {
 					dp[j]++;
-					int curr = j, step = 0;
-					while (curr - step >= 0 && step < dp[curr]) {
-						if (dp[curr-step] > step) {
-							max = Math.max(max, step + 1);
-						}
-						step++;
-					}
+					int curr = j, step = 0, min = dp[curr];
+                    while (curr - step >= 0 && step < dp[j]) {
+                        min = Math.min (dp[curr - step], min);
+                        max = Math.max (max, Math.min(min, step + 1));
+                        step++;
+                    }
 				}
 			}
 		}

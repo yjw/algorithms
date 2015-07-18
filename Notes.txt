@@ -3,3 +3,6 @@ There are three problems here:
 1) Majority of n / 2;
 2) Majority of n / k;
 3) Sorted array.
+
+
+2. Two binary trees
