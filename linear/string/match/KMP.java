@@ -6,9 +6,10 @@ public class KMP {
         this.pat = pat;
         int M = pat.length;
         int R = 256;
-        dfa = new int[M][R];
+        dfa = new int[R][M];
         dfa[pat.charAt(0)][0] = 1;
-        for (int X = 0, j = 1; j < M; j++) {
+        int X = 0;
+        for (int j = 1; j < M; j++) {
             for (int c = 0; c < R; c++) {
                 dfa[c][j] = dfa[c][X];
             }
@@ -28,6 +29,10 @@ public class KMP {
             return N;
     }
 }
+
+//关键在于理解X：
+//X之前的都能match上
+
 
 /**
  字符串匹配问题是字符串特有的问题，是整个字符串问题的核心：

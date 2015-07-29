@@ -1,4 +1,6 @@
 public class Solution {
+    
+    /*
     public String getShortestPalindrome(String word) {
         if (word == null || word.equals("")) {
             return word;
@@ -37,6 +39,7 @@ public class Solution {
         
         String shortestPalindrome = word + appendOnRight.reverse();
         return shortestPalindrome;
-        
+
     }
+*/
 }
