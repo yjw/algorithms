@@ -1,0 +1,3 @@
+Search word is a good application of tries. 
+The essential idea is to build the dictionary into a trie. 
+This trie can be used to terminate the backtracking routine as early as possible.
