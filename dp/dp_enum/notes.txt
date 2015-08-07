@@ -1,0 +1,1 @@
+For this kind of dp, the intermediate result of the subproblem is not an "optimized" 
