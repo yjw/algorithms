@@ -17,7 +17,6 @@ public class Solution {
 			while (deque.peek() < i - k + 1) {
 				deque.poll();
 			}
-			//System.out.println(deque);
 			if (i >= k - 1) {
 				res[i - k + 1] = nums[deque.peek()];
 			}
