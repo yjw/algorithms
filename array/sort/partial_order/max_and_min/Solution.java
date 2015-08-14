@@ -1,4 +1,6 @@
 //This is an algorithm from CLRS
+// It is a partial wiggle sort
+// Wiggle sort is stronger than this max and min.
 
 public class Solution {
     public int[] max_min(int a[]) {
