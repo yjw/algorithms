@@ -1,12 +1,17 @@
 import java.util.List;
 import java.util.ArrayList;
 
-//第一种方法就是不保存，一列/行 一列的打
+/*
+This is a wrong solution, which makes a very common mistake. 
+In order to make sure of the order of values in each list,
+BFS is required!
+*/
+
 public class Vertical {
     private int[] left = {0};
     private int[] right = {0};
-    //left[0] = {0}, right[0] = {0};
-    public List<List<Integer>> traverse (TreeNode root) {
+    
+    public List<List<Integer>> verticalOrder (TreeNode root) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         update_min_max(root, 0, left, right);
         for (int i = left[0]; i < right[0]; i ++) {
